@@ -2,7 +2,7 @@
 {
     public class Sumador
     {
-        public int CantidadSumas { get => _cantidadSumas; set => _cantidadSumas = value; }
+        public  int CantidadSumas { get => _cantidadSumas; set => _cantidadSumas = value; }
         private int _cantidadSumas;
 
         public Sumador(int inicio)
