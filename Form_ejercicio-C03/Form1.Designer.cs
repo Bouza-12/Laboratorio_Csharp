@@ -112,6 +112,7 @@ namespace Form_ejercicio_C03
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(491, 106);
             Controls.Add(txb_resultadoBin);
             Controls.Add(txb_resultadoDec);
@@ -122,7 +123,7 @@ namespace Form_ejercicio_C03
             Controls.Add(lbl_decToBin);
             Controls.Add(lbl_binToDec);
             Name = "Form1";
-            Text = "Conversor";
+            Text = "Conversor Numérico";
             ResumeLayout(false);
             PerformLayout();
         }

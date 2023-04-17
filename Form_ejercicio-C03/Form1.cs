@@ -33,9 +33,9 @@ namespace Form_ejercicio_C03
             int convertir;
             bool parseadoOK = int.TryParse(txb_decToBin.Text, out convertir);
 
-            if(parseadoOK)
+            if (parseadoOK)
             {
-                txb_resultadoBin.Text = Conversor.ConvertirDecimalABinario(convertir) ;
+                txb_resultadoBin.Text = Conversor.ConvertirDecimalABinario(convertir);
             }
             else
             {
