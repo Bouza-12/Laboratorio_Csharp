@@ -123,6 +123,7 @@
             btn_conversorCelsius.TabIndex = 7;
             btn_conversorCelsius.Text = "->";
             btn_conversorCelsius.UseVisualStyleBackColor = true;
+            btn_conversorCelsius.MouseClick += btn_conversorCelsius_MouseClick;
             // 
             // btn_conversosKelvin
             // 
@@ -132,6 +133,7 @@
             btn_conversosKelvin.TabIndex = 8;
             btn_conversosKelvin.Text = "->";
             btn_conversosKelvin.UseVisualStyleBackColor = true;
+            btn_conversosKelvin.Click += btn_conversosKelvin_Click;
             // 
             // txb_farenheit
             // 
