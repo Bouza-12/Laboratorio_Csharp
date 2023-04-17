@@ -115,6 +115,11 @@
             CotzRespectoDolar = cotzRespectoDolar;
         }
 
+        public static void SetCotizacion(double cotz)
+        {
+            var t = cotz;
+        }
+
         public static explicit operator Euro(double d)
         {
             return (Euro)(d);

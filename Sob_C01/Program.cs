@@ -6,8 +6,8 @@
         {
             Console.WriteLine("Ejercicio C01 - Conversor binario recargado");
 
-            Console.WriteLine($"Numero decimal: 9     | binario: {Conversor.ConvertirDecimalABinario(9)}");
-            Console.WriteLine($"Numero binario: 1001  | decimal: {Conversor.ConvertirBinarioADecimal(1001)}");
+            Console.WriteLine($"Numero decimal: 8     | binario: {Conversor.ConvertirDecimalABinario(8)}");
+            Console.WriteLine($"Numero binario: 100  | decimal: {Conversor.ConvertirBinarioADecimal(100)}");
 
 
         }
@@ -16,22 +16,22 @@
         {
             private string numero;
             
-            private NumeroBinario(string numero)
+            public NumeroBinario(string numero)
             {
                 this.numero = numero;
             }
 
-            public static string operator +(NumeroBinario NumeroDecimal(string binario), NumeroDecimal num = new NumeroDecimal(numDecimal))
-            {
+            //public static string operator +(NumeroBinario NumeroDecimal(string binario), NumeroDecimal num = new NumeroDecimal(numDecimal))
+            //{
 
-            } 
+            //} 
         }
 
         class NumeroDecimal
         {
             private double numeroDecimal;
 
-            private NumeroDecimal(double numeroDecimal)
+            public NumeroDecimal(double numeroDecimal)
             {
                 this.numeroDecimal = numeroDecimal;
             }
@@ -43,9 +43,12 @@
 
             public static explicit operator NumeroBinario(NumeroDecimal numeroDecimal)
             {
-                return  NumeroBinario Conversor.ConvertirDecimalABinario(numeroDecimal);
+                NumeroBinario binario = new NumeroBinario(Conversor.ConvertirDecimalABinario(numeroDecimal));
+                return   binario;
             }
             
         }
+
+
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sob_C01
 {
-    internal class Conversor
+    public class Conversor
     {
         public static string ConvertirDecimalABinario(int numero)
         {
@@ -19,7 +19,8 @@ namespace Sob_C01
                 numero = numero / 2;
             }
             sb.Append($"{numero}");
-            return sb.ToString();
+            
+            return Revertir(sb.ToString());
         }
 
         public static int ConvertirBinarioADecimal(int binario)
@@ -42,6 +43,24 @@ namespace Sob_C01
 
             return resultado;
 
+        }
+        public static string Revertir(string str)
+        {
+            char[] chars = str.ToCharArray();
+            Array.Reverse(chars);
+            return new string(chars);
+        }
+
+        public static bool EsBinario(string str)
+        {
+            for(int i=0; i<str.Length; i++)
+            {
+                if (str[i] != '0' && str[i] != '1')
+                {
+                    return false;
+                }                
+            }
+            return true;
         }
     }
 }
