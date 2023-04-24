@@ -10,7 +10,9 @@ namespace Vehiculos
     {
         private short _cantidadCompetidores;
         private short _cantidadVueltas;
-        private List<AutoF1> competidores;
+        private List<VehiculoDeCarrera> competidores;
+        public enum ETipoCompetencia { AutoF1, MotoCross};
+        private ETipoCompetencia _tipo;
 
         #region Getters y Setters
         public short CantidadCompetidores
@@ -26,12 +28,26 @@ namespace Vehiculos
                 _cantidadVueltas = value;
             }
         }
-        public List<AutoF1> Competidores
+        public List<VehiculoDeCarrera> Competidores
         {
             get { return competidores; }
             set { competidores = value; }
         }
+
+        public ETipoCompetencia Tipo
+        {
+            get { return _tipo; }
+            set { _tipo = value; }
+        }
         #endregion
+        private Competencia() { }
+
+        public Competencia(short cantVueltas, short cantCompetidores, ETipoCompetencia tipo)
+        {
+            CantidadCompetidores = cantCompetidores;
+            CantidadVueltas = cantVueltas;
+            Tipo = tipo;
+        }
 
         public override string ToString()
         {
@@ -46,17 +62,22 @@ namespace Vehiculos
             return sb.ToString();
         }
 
-        public static bool operator ==(Competencia c, AutoF1 auto)
+        public static bool operator ==(Competencia c, VehiculoDeCarrera auto)
         {
-            return c.Competidores.Contains(auto);
+            if((c.Tipo == Competencia.ETipoCompetencia.AutoF1 && auto.GetType() == typeof(AutoF1)) ||
+                (c.Tipo == Competencia.ETipoCompetencia.MotoCross && auto.GetType() == typeof(MotoCross)))
+            {
+                return c.Competidores.Contains(auto);
+            }
+            return false;
         }
 
-        public static bool operator !=(Competencia c, AutoF1 auto)
+        public static bool operator !=(Competencia c, VehiculoDeCarrera auto)
         {
             return !(c == auto);
         }
 
-        public static bool operator +(Competencia c, AutoF1 auto)
+        public static bool operator +(Competencia c, VehiculoDeCarrera auto)
         {
             if (!c.Competidores.Contains(auto))
             {
@@ -66,7 +87,7 @@ namespace Vehiculos
             return false;
         }
 
-        public static bool operator -(Competencia c, AutoF1 auto)
+        public static bool operator -(Competencia c, VehiculoDeCarrera auto)
         {
             if (c.Competidores.Contains(auto))
             {
